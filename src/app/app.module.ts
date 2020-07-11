@@ -18,8 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { FilterPipe } from './filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { TransferService } from './transfer.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,9 +42,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTabsModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TransferService],
   bootstrap: [AppComponent],
   
 })
