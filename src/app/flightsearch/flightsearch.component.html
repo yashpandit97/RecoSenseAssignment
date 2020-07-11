@@ -1,0 +1,36 @@
+<br>
+<div class="container">
+    <div class="grid-container center col-md-4 col-12 mt-3 sm-2">
+        <form id="filter" class="form">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="term" [ngModelOptions]="{standalone: true}">
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Cards -->
+<div class="container" *ngFor="let data of list | filter:term">
+    <div class="row">
+        <div class="col-12 mt-3 sm-4">
+            <div class="card">
+                <div class="card-horizontal">
+                    <div class="card-body">
+                        <h1 class="card-text">Price: {{ data.price }}</h1>
+                        <h4 class="card-title">To: {{ data.to }}</h4>
+                        <h4 class="card-text">Departure Time: {{ data.departureTime }}</h4>
+                        <h4 class="card-text">Arrival Time: {{ data.arrivalTime }}</h4>
+                        <br><br>
+                        <p><a href="#" class="btn btn-primary">Book This Flight</a></p>
+                    </div>
+                    <div class="img-square-wrapper">
+                        <img class="card-img-top" src="../assets/images/{{ data.to }}.jpg" alt="Card image cap">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

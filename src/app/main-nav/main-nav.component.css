@@ -1,0 +1,49 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 200px;
+}
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+html body {
+    margin: 0;
+}
+
+::ng-deep.mat-tab-label,
+ ::ng-deep.mat-tab-label-active {
+    min-width: 0!important;
+    padding: 6px!important;
+    margin: 6px!important;
+}
+
+:host>>>.sidenav {
+    width: 20%;
+}
+
+@media screen and (max-width: 600px) {
+    :host>>>.sidenav {
+       width: 70%;
+   }
+}
+
+mat-slider {
+    justify-content: center;
+    width: 100%;
+  }
+
+
+  .btn
+  {
+      background-color: rgb(72, 18, 219);
+  }

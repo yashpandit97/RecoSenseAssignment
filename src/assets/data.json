@@ -1,0 +1,42 @@
+[
+    {
+      "to": "Mumbai",
+      "from": "Pune",
+      "desc": "Mumbai-Description",
+      "price": 5000,
+      "departureTime": "4 AM",
+      "arrivalTime": "7 AM"
+    },
+    {
+      "to": "Pune",
+      "from": "Mumbai",
+      "desc": "Mumbai-Description",
+      "price": 5000,
+      "departureTime": "4 AM",
+      "arrivalTime": "7 AM"
+    },
+    {
+      "to": "Mumbai",
+      "from": "Goa",
+      "desc": "Mumbai-Description",
+      "price": 5000,
+      "departureTime": "4 AM",
+      "arrivalTime": "7 AM"
+    },
+    {
+      "to": "Goa",
+      "from": "Pune",
+      "desc": "Mumbai-Description",
+      "price": 5000,
+      "departureTime": "4 AM",
+      "arrivalTime": "7 AM"
+    },
+    {
+      "to": "Delhi",
+      "from": "Goa",
+      "desc": "Mumbai-Description",
+      "price": 5000,
+      "departureTime": "4 AM",
+      "arrivalTime": "7 AM"
+    }
+  ]

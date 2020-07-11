@@ -1,0 +1,81 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-tab-group>
+            <mat-tab label="One Way">
+                <mat-nav-list>
+                    <div class="container">
+                        <div class="grid-container">
+                            <form id="filter" class="form" [formGroup]="flightData">
+                                <div class="form-group">
+                                    <label for="from">From:</label>
+                                    <input type="text" id="from" class="form-control" formControlName="from" placeholder="From">
+                                    <br>
+                                    <label for="to">To:</label>
+                                    <input type="text" id="to" class="form-control" formControlName="to" placeholder="To">
+                                    <br>
+                                    <label for="departure">Departure Date:</label>
+                                    <input type="date" id="departure" formControlName="departureDate" class="form-control">
+                                    <br>
+                                    <label for="passengerCount">Passengers</label>
+                                    <input type="number" id="passengerCount" class="form-control" formControlName="passengerCount" placeholder="Passenger Count">
+                                    <!-- Slider -->
+                                    <div class="container">
+                                        <p>Price:<mat-slider class="mat-slider" thumbLabel tickInterval="1" min="0" max="20000" step="1000" value="5" formControlName="price"></mat-slider></p>
+                                    </div>
+                                    <br>
+                                    <button type="submit" (click)="process()" class="btn btn-primary">Search</button>
+                                    <br><br>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </mat-nav-list>
+            </mat-tab>
+            <mat-tab label="Return">
+                <mat-nav-list>
+                    <div class="container">
+                        <div class="grid-container">
+                            <form id="filter" class="form" [formGroup]="flightData">
+                                <div class="form-group">
+                                    <label for="from">From:</label>
+                                    <input type="text" id="from" class="form-control" formControlName="from" placeholder="From">
+                                    <br>
+                                    <label for="to">To:</label>
+                                    <input type="text" id="to" class="form-control" formControlName="to" placeholder="To">
+                                    <br>
+                                    <label for="departure">Departure Date:</label>
+                                    <input type="date" id="departure" class="form-control" formControlName="departureDate">
+                                    <br>
+                                    <label for="return">Return Date:</label>
+                                    <input type="date" id="return" class="form-control" formControlName="returnDate">
+                                    <br>
+                                    <label for="passengerCount">Passengers</label>
+                                    <input type="number" id="passengerCount" class="form-control" formControlName="passengerCount" placeholder="Passenger Count" >
+                                    <!-- Slider -->
+                                    <div class="container">
+                                        <p>Price:<mat-slider class="mat-slider" thumbLabel tickInterval="1" min="0" max="20000" step="1000" value="5" formControlName="price"></mat-slider></p>
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary" (click)="process()" >Search</button>
+                                    <br><br>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </mat-nav-list>
+            </mat-tab>
+        </mat-tab-group>
+
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+            <span>Flight Search Engine</span>
+        </mat-toolbar>
+        <!-- Add Content Here -->
+        <app-flightsearch></app-flightsearch>
+    </mat-sidenav-content>
+</mat-sidenav-container>
